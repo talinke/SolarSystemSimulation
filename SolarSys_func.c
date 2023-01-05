@@ -319,7 +319,7 @@ void estimateDuration() {
     }
     t = clock() - t;                                                            //obtain duration
     time_taken = ((double)t)/CLOCKS_PER_SEC;                                    //convert to seconds
-    printf("Estimated duration of simulation is %.1e seconds\n", time_taken*Nobj*duration);   //obtain estimate
+    printf("Estimated duration of simulation is %.1e seconds.", time_taken*Nobj*duration);   //obtain estimate
     fclose(f_sim);
 }
 

@@ -33,11 +33,16 @@ int main() {
                 }
                 displayClose();
                 free(object);
+		init = FALSE;
                 break;
 
             case OBTAIN:
                 if (init == FALSE) initialize();
-                printf("Please enter the object number whose data is to be obtained: ");
+		for (int i = 0; i < Nobj; i++) {
+                	printf("[%d] - %s\t", i, (object+i)->name);
+		}
+		printf("\n");
+		printf("Please enter the object number whose data is to be obtained: ");
                 scanf("%d", &tracker);
                 printf("Obtaining data for %s. ", (object+tracker)->name);
                 estimateDuration();
@@ -45,14 +50,16 @@ int main() {
                 for (int t = 0; t < duration; t++) {
                     runSim();
                 }
+		printf("Results saved in 'Results.dat' file.\n");
                 free(object);
+		init = FALSE;
+		break;
 
             case ADD:                         //change parameters interactively
                 Nobj++;
                 initialize();
                 init = TRUE;
                 addObject();
-                sleep(2);
                 break;
 
             case QUIT:                          // quit the program
