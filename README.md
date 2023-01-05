@@ -3,6 +3,7 @@ Simulate the solar system (or any n-body simulation) using this code. Its intuit
 
 Link the function and menu file during compilation. For Mac, use: 
 
->> gcc SolarSys_func.c SolarSys_menu.c
->> ./a.out
+> gcc SolarSys_func.c SolarSys_menu.c
+
+> ./a.out
 
